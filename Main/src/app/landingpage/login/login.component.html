@@ -1,0 +1,78 @@
+<div class="loader-wrapper" *ngIf="loading">
+  <!-- <span class="loader"><span class="loader-inner"></span></span> -->
+  <img class="loader" src="./assets/vectorDB - white.svg" alt="logo" />
+</div>
+
+<div>
+
+
+
+
+
+
+
+<body *ngIf="show">
+
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form>
+                <h1>Create Account</h1>
+                <div class="social-icons">
+                    <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+                <span>or use your email for registeration</span>
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <input type="password" placeholder="Password">
+                <button>Sign Up</button>
+            </form>
+        </div>
+        <!-- <img src="./assets/images/awtar.png"  width="50px" height="50px" alt=""> -->
+        <div class="form-container sign-in">
+            <form  [formGroup]="myReactiveForm" (ngSubmit)="onSubmit()" class="form">
+                <span style="display: flex;flex-direction: row;">  
+                    <h1 class="h1">SIGN IN</h1></span>
+               
+                <div class="social-icons">
+                    <img src="https://vectordb.app/img/vectorDB-DC.svg" alt="" width="100px" height="100px">   
+                    <!-- <a href="#" class="icon">            
+                    </a> -->
+                    <!-- <a href="#" class="icon"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="icon"><i class="fa-brands fa-linkedin-in"></i></a> -->
+                </div>
+      
+                <!-- <span>or use your email password</span> -->
+                <input type="text" formControlName="email" placeholder="User Name" class="form-control" />
+                <input type="password" formControlName="password" placeholder="Password" class="form-control" />
+                <a  routerLink="forgotPassword">→ Forget Your Password? ←</a>
+                <button  type="submit">Sign In</button>
+                <button type="button" class="btn" style="border-radius: 20px;font-weight:bold; background-color: rgb(253, 253, 252);color: #000;">
+                  <a href="https://vectordb.app/signup/">SignUp</a>
+                </button>
+  
+                
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Welcome Back!</h1>
+                    <p>Enter your personal details to use all of site features</p>
+                    <button class="hidden" id="login">Sign In</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <!-- <h1>Hello, Friend!</h1> -->
+                    <p>Register with your personal details to use all of site features</p>
+                    <img src="./assets/login.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+ 
+</body>
+

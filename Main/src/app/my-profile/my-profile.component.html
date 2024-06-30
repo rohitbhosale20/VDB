@@ -1,0 +1,49 @@
+<div class="shadow account-form">
+    <b class="account">Account Info</b>
+    <mat-divider></mat-divider>
+    <form action="">
+        <div class="form-group">
+            <label for="first_name">First Name</label>
+            <input type="text" id="first_name" value="{{userFirstName | titlecase}}" class="form-control" readonly>
+        </div>
+
+        <div class="form-group">
+            <label for="last_name">Last Name</label>
+            <input type="text" id="last_name" value="{{userLastName | titlecase}}" class="form-control"readonly>
+        </div>
+
+        <div class="form-group">
+            <label for="title">Credit</label>
+            <input type="text" id="last_name" value="{{usercredit | titlecase}}" class="form-control" readonly>
+        </div>
+
+        <div class="form-group">
+            <label for="title">API</label>
+            <input type="text" id="last_name" value="{{userapi_key | titlecase}}" class="form-control" readonly>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <div class="email-container">
+                <span class="user-email">{{userEmail}}</span>
+                <!-- <button class="btn btn-warning " style="margin-left: 18px;" (click)="openDialogForEmail()">
+                    <span class="material-symbols-outlined">lock</span>
+                    Change Email
+                </button> -->
+            </div>
+        </div>
+
+        <div class="form-group">
+            <!-- <div style="margin-bottom: 20px;"><b>Password</b></div> -->
+            <button class="btn btn-warning" (click)="openDialogForPassword()">
+                <span class="material-symbols-outlined">lock</span>
+                Change Password
+            </button>
+            <br>
+            <button class="btn btn-warning " style="margin-left: 18px;" (click)="openDialogForEmail()">
+                <span class="material-symbols-outlined">lock</span>
+                Change Email
+            </button>
+        </div>
+    </form>
+</div>

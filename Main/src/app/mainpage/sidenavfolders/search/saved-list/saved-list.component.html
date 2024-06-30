@@ -1,0 +1,11 @@
+<div class="card-container">
+  <div class="card">
+    <strong class="saved-list-message">Saved-list!</strong>
+    <mat-divider></mat-divider>
+    <div *ngFor="let savedFilter of dataofsaved" class="card-item" (click)="navigateToFilter(savedFilter)">
+      <p>{{ savedFilter.filter_name }}</p>
+      <span style="padding-left: 20px;">{{ savedFilter.created_at }}</span>
+      <!-- <p>{{savedFilter.include_company_name}}</p> -->
+    </div>
+  </div>
+</div>

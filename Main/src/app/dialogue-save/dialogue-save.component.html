@@ -1,0 +1,10 @@
+<div class="button-container">
+  <button *ngIf="!isDataSaved" (click)="saveData()" class="btn btn-secondary" style="width: 100px; height: 50px;">
+    Save
+  </button>
+  <button *ngIf="isDataSaved" (click)="exportToCSV()" class="btn btn-primary" style="width: 100px; height: 50px; margin-left: 10px;">
+    Export
+  </button>
+</div>
+
+  

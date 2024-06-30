@@ -1,0 +1,103 @@
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .col-6 {
+    flex: 0 0 calc(50% - 20px);
+    margin-bottom: 20px;
+  }
+
+  .mat-card {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+
+  .mat-card-content {
+    font-size: 18px;
+    margin-top: 10px;
+  }
+
+  
+  #chart,
+  #chart2 {
+    width: 100%;
+    height: 300px;
+    background-color: #f5f5f5; 
+    border-radius: 5px;
+    overflow: hidden; 
+  }
+#chart{
+  padding: 50px;
+}
+  @media  screen and (max-width:480px) {
+  #chart{
+  height: 400.3667px;
+  }  
+
+  #chart2{
+    height: 522.3667px;
+  }
+}
+  
+
+  @media screen and (min-width: 768px) {
+    .col-6 {
+      flex: 0 0 calc(50% - 20px);
+      margin-bottom: 20px;
+    }
+  }
+
+  @media screen and (min-width:1214px) {
+    .mainclass{
+      display: inline-flex;
+      flex-direction: column;
+    }
+  }
+  .mainclass{
+    display: inline-flex;
+    flex-direction: row;
+   
+  }
+ 
+  #chart{
+    display: block;
+  }
+
+  .div{
+    margin-top: 50px;
+     margin-left: 60px;
+  }
+
+  .title{
+    padding-bottom: 10px;
+  }
+
+
+  #piechart_3d:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   
+
+  }
+
+  #piechart_2d:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+   
+  }
+
+
+
+#piechart_3d, #piechart_2d {
+  width: 600px; 
+  height: 300px;
+
+}
+
+
+
+

@@ -1,0 +1,252 @@
+<mat-sidenav-container>
+  <mat-sidenav mode="side" opened class="topbar" #mysidebar >
+    <!-- these are the logos of sidenav -->
+    <div class="sidebar">
+      <div class="user-account">
+        <img src="./assets/vectorDB - white.svg" alt="logo" />
+        <h2></h2>
+      </div>
+      <ul class="links">
+        <h4>VectorDB</h4>
+        <li  style="
+        padding-bottom: 0px;
+        padding-left: 4px;
+        display: flex;
+        flex-direction: row;
+        cursor:context-menu;
+       
+      ">
+          
+    <span class="material-symbols-outlined" routerLink="firstPage" >
+       <img   style="width: 23px; margin-left: px; "  src="https://vectordb.app/img/white-home.png" alt="img"> 
+    </span>
+ 
+          <a routerLink="firstPage" style="font-size: 12px;"
+          >Home </a>
+        </li>
+        <hr/>
+
+
+        <li  style="
+        padding-bottom: 5px;
+        padding-left: 4px;
+        display: flex;
+        flex-direction: row;
+        cursor:context-menu;
+       
+      ">
+          <span class="material-symbols-outlined" routerLink="search"><img   style="width: 23px; margin-left: px; " src="https://vectordb.app/img/white-search.png" alt="img"></span>
+          <a  routerLink="search" style="font-size: 12px; "
+          >Search</a>
+        </li>
+      
+        
+     
+       
+        <li style="
+        padding-bottom: 10px;
+        padding-left: 9px;
+        display: flex;
+        flex-direction: row;
+        cursor:context-menu;
+       
+      " routerLink="dataEnrichment" >
+          <img  style="width: 23px; margin-left: 8px; " src="https://vectordb.app/img/load2.png" alt="img">
+          <a routerLink="dataEnrichment" style="font-size: 12px; "> Data 
+            <p >Enrichment</p>
+          </a>
+        </li>
+        <hr />
+        <li style="
+        padding-bottom: 15px;
+        padding-left: 12px;
+        display: flex;
+        flex-direction: row;
+        cursor:context-menu;
+       
+      ">
+          <img  style="width: 23px; margin-left: 6px;" src="https://vectordb.app/img/envelope.png" alt="img">
+          <a href="#" style="font-size: 12px; text-align: center;">Mail</a>
+        </li>
+        <li style="
+        padding-bottom: 25px;
+        padding-left: 12px;
+        display: flex;
+        flex-direction: row;
+        cursor:context-menu;
+       
+      ">
+          <img  style="width: 23px; margin-left: 6px;" src="https://vectordb.app/img/call.png" alt="img">
+          <a href="#" style="font-size: 12px; text-align: center;">Call</a>
+        </li>
+        <hr/>
+       
+      </ul>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content id="content" name="main_content" class="main" >
+    <div id="main">
+      <!-- horizontal navbar -->
+      <div class="commondiv"> 
+        <!-- <button class="openbtn" (click)="openNav()">☰</button> -->
+        <div class="navbarr">
+          <nav
+            class="navbar navbar-expand-lg navbar-light justify-content-between">
+            <a
+              class="navbar-brand mx-3 text"
+              style="font-weight: bold; color: rgb(70, 49, 26)"
+            ></a>
+            <!-- <button class="navbar-toggler" type="button" (click)="toggleNavbar()">  -->
+            <!-- <span class="navbar-toggler-icon"></span> -->
+            <!-- </button>  -->
+            <div
+          
+            >
+            
+           <form class="form-inline my-2 my-lg-0 form" (submit)="performSearch()">
+        
+  <div class="d-flex flex-row searchbox">
+   <div class="hide">
+    <input
+      class="form-control mr-sm-2 search-input"
+      type="search"
+      placeholder="Search"
+      aria-label="Search"
+      [(ngModel)]="searchInput"
+    />
+    <button
+      class="btn btn-outline-warning my-2 my-sm-0 searchBtn"
+      type="submit"
+    >
+      Search
+    </button>
+
+  </div>
+    <div class="d-flex align-items-center right">
+    <button class="symboll " style="margin-left: 10px;" mat-icon-button (click)="openUserDialog()">
+      <span class="material-symbols-outlined  noti">notifications</span>
+    </button>
+    <button  style="border: 0.5px solid rgb(224, 221, 221); padding: 10px; background-color:#0c4471;color: white;
+    border-radius: 100px;"   [matMenuTriggerFor]="avatarMenu" class="mx-3 hoverr dropdownbtn">{{ userFirstName[0] | titlecase}}{{ userLastName[0] | titlecase }}
+    </button>
+
+    <mat-menu #avatarMenu="matMenu" style="background-color: blue;" >
+      <span style="padding-left: 10px;"
+        >{{ userFirstName | titlecase }}
+        {{ userLastName | titlecase }}</span
+      >
+      <div style="padding-left: 10px" >
+        <span
+          mat-button
+          disabled
+          style="background-color: rgb(231, 227, 227)"
+          >Admin</span
+        >
+      </div>
+      <button mat-menu-item>
+        <span class="material-symbols-outlined" routerLink="myProfile"
+          >account_circle
+        </span>
+        <span routerLink="myProfile">My profile</span>
+      </button>
+      <button mat-menu-item>
+        <span class="material-symbols-outlined">settings</span
+        >Settings
+      </button>
+      <button mat-menu-item (click)="logout()">
+        <span class="material-symbols-outlined" (click)="logout()"
+          >logout</span
+        >Logout
+      </button>
+   
+    </mat-menu>
+  </div>
+  </div>
+</form>
+
+        
+        
+            </div>
+          </nav>
+        </div></div>
+     
+      <mat-divider class="shadow"></mat-divider>
+      <router-outlet></router-outlet>
+    </div>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+<!-- 
+<div>
+  <div id="mySidebar" class="sidebar">
+
+    <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">×</a>
+    <div class="search">
+      <div
+        style="
+          padding-bottom: 10px;
+          padding-left: 3px;
+          display: flex;
+          flex-direction: row;
+          margin-top: 91px;
+        "
+        class="hover"
+      >
+        <b
+          routerLink="firstPage"
+          style="margin-top: -18px; margin-left: 4px; margin-bottom: 10px;"
+          >Home</b
+        >
+      </div>
+      <mat-divider></mat-divider>
+      <div
+        style="padding-top: 25px; padding-bottom: 10px; padding-left: 10px"
+        class="hover"
+      >
+        <b style="margin-top: 4px; margin-left: 4px" routerLink="search"
+          >Search</b
+        >
+      </div>
+    </div>
+    <div
+      style="
+        padding-bottom: 35px;
+        padding-left: 20px;
+        display: flex;
+        flex-direction: row;
+      "
+      class="hover"
+    >
+      <b style="margin-top: 4px; margin-right:10px" >Data Enrichment</b>
+    </div>
+    <mat-divider></mat-divider>
+    <div
+      style="
+        padding-left: 20px;
+        padding-top: 30px;
+        display: flex;
+        flex-direction: row;
+      "
+      class="hover"
+    >
+      <b style="margin-top: 4px; margin-left: 4px">Emails</b>
+    </div>
+    <div
+      style="
+        padding-bottom: 15px;
+        padding-left: 20px;
+        display: flex;
+        flex-direction: row;
+      "
+      class="hover"
+    >
+      <b style="margin-top: 4px; margin-left: 4px">Calls</b>
+    </div>
+    <mat-divider></mat-divider>
+  </div>
+</div> -->
+
+
+
+
